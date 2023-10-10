@@ -34,7 +34,7 @@
 
       "description": "Get your bot token by talking to @Botfather",
 
-      "value": "6035104370:AAFjmi4e7LDGzFGnMRfEL3sn87iM882aAHI",
+      "value": "6505335502:AAG_eIVz0iC7E5GWp8Y-k00kYaOIEQCuKao",
       
       "required": true
 
@@ -62,7 +62,7 @@
 
       "description": "who will use this bot",
 
-      "value":"1924424042",
+      "value":"1924424042 -1001537010401",
 
       "required": true
 
