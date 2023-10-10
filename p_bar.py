@@ -102,5 +102,4 @@ async def progress_bar(current, total, reply, start):
             except FloodWait as e:
                         await m.reply_text(str(e))
                         time.sleep(e.x)
-                        continue
 
