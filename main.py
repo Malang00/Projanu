@@ -139,7 +139,7 @@ async def account_login(bot: Client, m: Message):
     try:
         for i in range(count - 1, len(links)):
 
-            V = links[i][1].replace("file/d/", "uc?export=download&id=").replace("www.youtube.com/embed", "youtu.be").replace("vodtenserve.classx.co.in", "dxip4wcd8mhk4.cloudfront.net").replace("www.youtube-nocookie.com/embed", "youtu.be").replace("?modestbranding=1", "").replace("/view?usp=sharing", "").replace('"', '').replace(',', '').replace('(','').replace(')','').replace("d1d34p8vz63oiq", "d26g5bnklkwsh4").replace("pw2.pc.cdn.bitgravity.com","d26g5bnklkwsh4.cloudfront.net").replace("file/d/","uc?export=download&id=").replace("?modestbranding=1", "").replace("/view?usp=sharing","").replace("vod.teachx.in", "d3igdi2k1ohuql.cloudfront.net").replace("downloadappx.appx.co.in", "d33g7sdvsfd029.cloudfront.net") # .replace("mpd","m3u8")
+            V = links[i][1].replace("file/d/", "uc?export=download&id=").replace("www.youtube.com/embed", "youtu.be").replace("vodtenserve.classx.co.in", "dxip4wcd8mhk4.cloudfront.net").replace("www.youtube-nocookie.com/embed", "youtu.be").replace("?modestbranding=1", "").replace("/view?usp=sharing", "").replace('"', '').replace(',', '').replace('(','').replace(')','').replace("d1d34p8vz63oiq", "d26g5bnklkwsh4").replace("pw2.pc.cdn.bitgravity.com","d26g5bnklkwsh4.cloudfront.net").replace("file/d/","uc?export=download&id=").replace("vod.teachx.in", "d3igdi2k1ohuql.cloudfront.net").replace("downloadappx.appx.co.in", "d33g7sdvsfd029.cloudfront.net") # .replace("mpd","m3u8")
             url = "https://" + V
 
             if "visionias" in url:
@@ -155,10 +155,10 @@ async def account_login(bot: Client, m: Message):
              id =  url.split("/")[-2]
              url =  "https://d26g5bnklkwsh4.cloudfront.net/" + id + "/master.m3u8"
 
-            name1 = links[i][0].replace("\t", " ").replace("'", " ").replace(":", " ").replace("_", " ").replace("/", " ").replace("+", " ").replace("#", " ").replace("|", "").replace("@", " ").replace("*", " ").replace(".", " ").replace("https", " ").replace("http", "").strip()
+            name1 = links[i][0].replace("\t", " ").replace("'", " ").replace(":", " ").replace("+", " ").replace("@", " ").replace("*", " ").replace("https", " ").replace("http", "").strip()
             name = f'{str(count).zfill(3)}) {name1[:60]}'
 
-            if "youtu" in url:
+            if "youtu.be" in url:
                 ytf = f"b[height<={raw_text2}][ext=mp4]/bv[height<={raw_text2}][ext=mp4]+ba[ext=m4a]/b[ext=mp4]"
             else:
                 ytf = f"b[height<={raw_text2}]/bv[height<={raw_text2}]+ba/b/bv+ba"
@@ -197,7 +197,7 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    prog = await m.reply_text(f"**Downloading Video**\n**Video Name :** `{name}\nQuality : {raw_text2}`\n**link : **`{url}`\n\n **⌈ 𝐌𝐚𝐝𝐞 𝐁𝐲 𝐘𝐨𝐮𝐫 𝐃𝐚𝐝𝐝𝐲 ⌋**")
+                    prog = await m.reply_text(f"**Downloading Video**\n**Video Name :** `{name}\nQuality : {raw_text2}`\n**link :** `{url}`\n\n**⌈ 𝐌𝐚𝐝𝐞 𝐁𝐲 𝐘𝐨𝐮𝐫 𝐃𝐚𝐝𝐝𝐲 ⌋**")
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
                     await prog.delete(True)
@@ -205,7 +205,7 @@ async def account_login(bot: Client, m: Message):
                     count += 1
 
             except Exception as e:
-                await m.reply_text(f"**This #Failed File is not Counted**\n**Name** =>> `{name}`\n**Link** =>> `{url}`\n\n ** fail reason »** {e}")
+                await m.reply_text(f"**This #Failed File is not Counted**\n**Name** : `{name}`\n**Link** : `{url}`\n\n **Fail Reason :** {e}")
                 count += 1
                 continue
 
